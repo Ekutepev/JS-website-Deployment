@@ -11,6 +11,8 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 
+let modelName = "";
+let duration = 0;
 
 
 
@@ -27,8 +29,19 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 
+function recalculate() {
+    let costLabel = document.getElementById("calculated-cost");
+    
+    if (modelName == "Model XYZ") {
+        cost = 100
+    } else {
+        cost = 213
+    };
 
-
+    let totalCost = duration * cost;
+    
+    costLabel.innerHTML = totalCost;
+}
 
 
 
