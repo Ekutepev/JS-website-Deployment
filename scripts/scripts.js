@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     modelButton.addEventListener("click", changeModel);
-});
+
 
 
 /****************** duration button logic ******************/
@@ -94,5 +94,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // INSERT YOUR CODE HERE
 
+    const durationButton = document.getElementById("duration-button");
 
+    function changeDuration() {
+        const durationTextSpan = document.getElementById("duration-text");
+        let newDuration = Number(prompt("How many days would you like to book",""));
 
+        if (!isNaN(newDuration) && newDuration > 0) {
+            duration = newDuration;
+            durationTextSpan.innerHTML = duration;
+            recalculate();
+        }
+    }
+    durationButton.addEventListener("click", changeDuration);
+});
