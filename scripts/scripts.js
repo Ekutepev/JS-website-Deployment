@@ -10,9 +10,9 @@ You are encouraged to use the provided naming convention for ease of review.
 /* create variables to hold the values for modelName and duration */
 
 // INSERT YOUR CODE HERE
-
-let modelName = "";
-let duration = 0;
+document.addEventListener("DOMContentLoaded", function() {
+    let modelName = "Model XYZ";
+    let duration = 0;
 
 
 
@@ -29,19 +29,19 @@ let duration = 0;
 
 // INSERT YOUR CODE HERE
 
-function recalculate() {
-    let costLabel = document.getElementById("calculated-cost");
-    
-    if (modelName == "Model XYZ") {
-        cost = 100
-    } else {
-        cost = 213
-    };
+    function recalculate() {
+        const costLabel = document.getElementById("calculated-cost");
+        let cost = 0.00;
+        
+        if (modelName === "Model XYZ") {
+            cost = 100.00;
+        } else if ( modelName === "Model CPRG") {
+            cost = 213.00;
+        }
 
-    let totalCost = duration * cost;
-    
-    costLabel.innerHTML = totalCost;
-}
+        let totalCost = duration * cost;
+        costLabel.innerHTML = totalCost;
+    }
 
 
 
@@ -55,14 +55,30 @@ function recalculate() {
     - if modelName is currently "CPRG", change the value of modelName to "XYZ", and change the innerHTML of the model-text span element to "Model XYZ"
     - then, recalculate() the total cost.
 - finally, uncomment the following line of JavaScript to have this function run automatically whenever the pseudo-button is clicked: */
-    // modelButton.addEventListener("click", changeModel);
+// modelButton.addEventListener("click", changeModel);
 
 // INSERT YOUR CODE HERE
 
+    const modelButton = document.getElementById("model-button");
 
+    function changeModel() {
+        const modelTextSpan = document.getElementById("model-text");
 
+        if (modelName === "Model XYZ") {
+            modelName = "Model CPRG";
+            modelTextSpan.innerHTML = "Model CPRG";
+    
+        } else if (modelName === "Model CPRG") {
+            modelName = "Model XYZ";
+            modelTextSpan.innerHTML = "Model XYZ";
+        }
 
+        recalculate();
 
+    }
+
+    modelButton.addEventListener("click", changeModel);
+});
 
 
 /****************** duration button logic ******************/
