@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         let totalCost = duration * cost;
-        costLabel.innerHTML = totalCost;
+        costLabel.innerHTML = totalCost.toFixed(2);
     }
 
 
