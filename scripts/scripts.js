@@ -14,9 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
     let modelName = "Model XYZ";
     let duration = 0;
 
-
-
-
 /****************** helper function ******************/
 /* create a function called recalculate() which will
     - create a variable to represent the calculated-cost span element. That will look something like:
@@ -42,9 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
         let totalCost = duration * cost;
         costLabel.innerHTML = totalCost.toFixed(2);
     }
-
-
-
 /****************** model button logic ******************/
 
 /* 
@@ -78,8 +72,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     modelButton.addEventListener("click", changeModel);
-
-
 
 /****************** duration button logic ******************/
 /*  - first, create a variable to represent the "Change Duration" pseudo-button.
