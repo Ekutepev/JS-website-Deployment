@@ -10,7 +10,6 @@ You are encouraged to use the provided naming convention for ease of review.
 /* create variables to hold the values for modelName and duration */
 
 // INSERT YOUR CODE HERE
-// document.addEventListener("DOMContentLoaded", function() {
 let modelName = "Model XYZ";
 let duration = 0;
 
@@ -99,4 +98,3 @@ function changeDuration() {
   }
 }
 durationButton.addEventListener("click", changeDuration);
-// });
