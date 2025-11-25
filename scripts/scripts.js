@@ -11,8 +11,8 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 document.addEventListener("DOMContentLoaded", function() {
-    let modelName = "Model XYZ";
-    let duration = 0;
+  let modelName = "Model XYZ";
+  let duration = 0;
 
 /****************** helper function ******************/
 /* create a function called recalculate() which will
@@ -26,19 +26,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // INSERT YOUR CODE HERE
 
-    function recalculate() {
-        const costLabel = document.getElementById("calculated-cost");
-        let cost = 0.00;
-        
-        if (modelName === "Model XYZ") {
-            cost = 100.00;
-        } else if ( modelName === "Model CPRG") {
-            cost = 213.00;
-        }
-
-        let totalCost = duration * cost;
-        costLabel.innerHTML = totalCost.toFixed(2);
+  function recalculate() {
+    const costLabel = document.getElementById("calculated-cost");
+    let cost = 0.00;
+    
+    if (modelName === "Model XYZ") {
+        cost = 100.00;
+    } else if ( modelName === "Model CPRG") {
+        cost = 213.00;
     }
+
+    let totalCost = duration * cost;
+    costLabel.innerHTML = totalCost.toFixed(2);
+}
 /****************** model button logic ******************/
 
 /* 
@@ -53,25 +53,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // INSERT YOUR CODE HERE
 
-    const modelButton = document.getElementById("model-button");
+  const modelButton = document.getElementById("model-button");
 
-    function changeModel() {
-        const modelTextSpan = document.getElementById("model-text");
+  function changeModel() {
+    const modelTextSpan = document.getElementById("model-text");
 
-        if (modelName === "Model XYZ") {
-            modelName = "Model CPRG";
-            modelTextSpan.innerHTML = "Model CPRG";
-    
-        } else if (modelName === "Model CPRG") {
-            modelName = "Model XYZ";
-            modelTextSpan.innerHTML = "Model XYZ";
-        }
+    if (modelName === "Model XYZ") {
+        modelName = "Model CPRG";
+        modelTextSpan.innerHTML = "Model CPRG";
 
-        recalculate();
-
+    } else if (modelName === "Model CPRG") {
+        modelName = "Model XYZ";
+        modelTextSpan.innerHTML = "Model XYZ";
     }
 
-    modelButton.addEventListener("click", changeModel);
+    recalculate();
+
+  }
+
+  modelButton.addEventListener("click", changeModel);
 
 /****************** duration button logic ******************/
 /*  - first, create a variable to represent the "Change Duration" pseudo-button.
@@ -86,17 +86,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // INSERT YOUR CODE HERE
 
-    const durationButton = document.getElementById("duration-button");
+  const durationButton = document.getElementById("duration-button");
 
-    function changeDuration() {
-        const durationTextSpan = document.getElementById("duration-text");
-        let newDuration = Number(prompt("How many days would you like to book",""));
+  function changeDuration() {
+    const durationTextSpan = document.getElementById("duration-text");
+    let newDuration = Number(prompt("How many days would you like to book",""));
 
-        if (!isNaN(newDuration) && newDuration > 0) {
-            duration = newDuration;
-            durationTextSpan.innerHTML = duration;
-            recalculate();
-        }
+    if (!isNaN(newDuration) && newDuration > 0) {
+        duration = newDuration;
+        durationTextSpan.innerHTML = duration;
+        recalculate();
     }
-    durationButton.addEventListener("click", changeDuration);
+  }
+  durationButton.addEventListener("click", changeDuration);
 });
